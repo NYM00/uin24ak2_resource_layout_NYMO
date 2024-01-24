@@ -8,7 +8,7 @@
 
 
     --font: 'Montserrat', sans-serif;
-    --rootsize: 20px;
+    --rootsize: 15px;
     --maxsize: 800px;
 }
 
@@ -25,30 +25,37 @@ body {
     background-color: var(--white);
 }
 
-nav {
-    display: block;
-}
-
 nav ul {
     list-style-type: none;
     display: flex;
     gap: 1rem;
     padding-left: 0;
-    justify-content: center;
-    background-color: var(--darkgrey);
+    justify-content: space-between;
+    background-color: var(--lightgrey);
     
+}
+
+.nav-item {
+    border-radius: 1px;
+    background-color: var(--darkgrey);
 }
 
 nav a {
     display: inline-block;
-    padding: 1rem;
+    padding: 1rem 2rem;
     padding-top: calc(1rem + 4px);
     color: var(--white);
     text-decoration: none;
     box-sizing: border-box;
+    font-size: var(--rootsize);
 }
 
 nav a:hover {
+    background-color: var(--white);
+    color: var(--darkgrey);
+}
+
+nav a.active {
     background-color: var(--white);
     color: var(--darkgrey);
 }

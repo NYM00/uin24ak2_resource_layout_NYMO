@@ -38,6 +38,7 @@ nav ul {
 .nav-item {
     border-radius: 1px;
     background-color: var(--darkgrey);
+    font-weight: 700;
 }
 
 nav a {
@@ -46,7 +47,6 @@ nav a {
     padding-top: calc(1rem + 4px);
     color: var(--white);
     text-decoration: none;
-    box-sizing: border-box;
     font-size: var(--rootsize);
 }
 
@@ -58,4 +58,8 @@ nav a:hover {
 nav a.active {
     background-color: var(--white);
     color: var(--darkgrey);
+}
+
+article{
+    padding: 3rem;
 }

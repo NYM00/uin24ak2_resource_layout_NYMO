@@ -15,33 +15,33 @@ const main = document.getElementsByTagName("main")
 main[0].innerHTML = resourcesHTML
 */ 
 
-// Velger ut hovedelementet main
+// Selector for hovedelementet "main"
 const main = document.querySelector("main");
 
-// Velger ut alle navigasjonselementene
+// Selector for alle navigasjonselementene
 const navItems = document.querySelectorAll(".nav-link");
 
-// Klikklyttere for hvert av navigasjonselementene
+// Klikklyttere for hvert navigasjonselement
 navItems.forEach(item => {
     item.addEventListener("click", function() {
-        // Fjerner active klassen fra alle navigasjonselementene
+        // Fjerner "active" klassen fra alle navigasjonselementene
         navItems.forEach(navItem => {
             navItem.classList.remove("active");
         });
 
-        // Legger til active klassen på det klikkede elementet
+        // Legger til "active" klassen på det elementet man klikker på
         item.classList.add("active");
 
-        // Skjuler ressursene
+        // Skjuler alle ressursene
         main.innerHTML = "";
 
-        // Henter kategorien som tilsvarer elementet jeg klikker på
+        // Henter kategorien som tilsvarer elementet man klikket på
         const category = item.innerText;
 
-        // Finner ressursen for kategorien jeg klikker på
+        // Finner ressursene for den valgte kategorien
         const selectedResources = resources.find(resource => resource.category === category);
 
-        // Hvis ressursen blir funnet = generer HTML-strukturen og legg til i hovedelementet
+        // Hvis ressursene er funnet => generer HTML-strukturen og legg til i hovedelementet
         if (selectedResources) {
             const resourceHTML = `
                 <article>
@@ -53,6 +53,14 @@ navItems.forEach(item => {
                 </article>
             `;
             main.insertAdjacentHTML('beforeend', resourceHTML);
+        } else {
+            // Hvis ressursene ikke er funnet, vises startmeldingen
+            main.innerHTML = '<p id="start-message">Trykk på et av meny-punktene for å starte</p>';
         }
     });
+});
+
+// Viser startmeldingen når siden lastes
+document.addEventListener("DOMContentLoaded", function() {
+    main.innerHTML = '<p id="start-message">Trykk på et av meny-punktene for å starte</p>';
 });

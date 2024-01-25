@@ -16,6 +16,7 @@ body {
     font-family: var(--font);
     font-size: var(--rootsize);
     background-color: var(--lightgrey);
+    padding-top: 50px;
 }
 
 #container {
@@ -58,6 +59,11 @@ nav a:hover {
 nav a.active {
     background-color: var(--white);
     color: var(--darkgrey);
+}
+
+#start-message {
+    padding-left: 25%;
+    padding-top: 3rem;
 }
 
 article{
